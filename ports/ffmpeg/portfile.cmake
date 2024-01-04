@@ -19,6 +19,11 @@ vcpkg_from_github(
         0015-Fix-xml2-detection.patch
         0020-fix-aarch64-libswscale.patch
         0022-fix-iconv.patch
+
+        # Resolume patches
+        1000-resolume-small-memory-allocations.patch
+        1001-max_chunk_size-from-format-context-in-build_chunks.patch
+        1003-avformat_index_get_entry_const_correctness.patch
 )
 
 if(SOURCE_PATH MATCHES " ")
@@ -63,6 +68,8 @@ elseif(VCPKG_CMAKE_SYSTEM_NAME STREQUAL "QNX")
 endif()
 
 if(VCPKG_TARGET_IS_OSX)
+    # we want our libs with @rpath for development
+    string(APPEND OPTIONS " --install_name_dir=@rpath")
     list(JOIN VCPKG_OSX_ARCHITECTURES " " OSX_ARCHS)
     list(LENGTH VCPKG_OSX_ARCHITECTURES OSX_ARCH_COUNT)
 endif()
