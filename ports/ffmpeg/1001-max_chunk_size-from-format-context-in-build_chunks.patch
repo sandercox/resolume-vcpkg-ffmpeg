@@ -1,0 +1,36 @@
+diff --git a/libavformat/movenc.c b/libavformat/movenc.c
+index fe6b259561..d44aa408ad 100644
+--- a/libavformat/movenc.c
++++ b/libavformat/movenc.c
+@@ -5117,11 +5117,12 @@ static int mov_write_pssh_tag(AVIOContext *pb, AVStream *st)
+     return 0;
+ }
+ 
+-static void build_chunks(MOVTrack *trk)
++static void build_chunks(AVFormatContext* s, MOVTrack *trk)
+ {
+     int i;
+     MOVIentry *chunk = &trk->cluster[0];
+     uint64_t chunkSize = chunk->size;
++    int maxChunkSize = (s->max_chunk_size > 0) ? s->max_chunk_size : (1<<20);
+     chunk->chunkNum = 1;
+     if (trk->chunkCount)
+         return;
+@@ -5129,7 +5130,7 @@ static void build_chunks(MOVTrack *trk)
+     for (i = 1; i<trk->entry; i++){
+         if (chunk->pos + chunkSize == trk->cluster[i].pos &&
+             chunk->stsd_index == trk->cluster[i].stsd_index &&
+-            chunkSize + trk->cluster[i].size < (1<<20)){
++            chunkSize + trk->cluster[i].size < maxChunkSize){
+             chunkSize             += trk->cluster[i].size;
+             chunk->samples_in_chunk += trk->cluster[i].entries;
+         } else {
+@@ -5209,7 +5210,7 @@ static int mov_write_moov_tag(AVIOContext *pb, MOVMuxContext *mov,
+         mov->tracks[i].time     = mov->time;
+ 
+         if (mov->tracks[i].entry)
+-            build_chunks(&mov->tracks[i]);
++            build_chunks(s, &mov->tracks[i]);
+     }
+ 
+     if (mov->chapter_track)

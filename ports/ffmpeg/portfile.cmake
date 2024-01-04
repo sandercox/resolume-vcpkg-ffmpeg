@@ -19,6 +19,12 @@ vcpkg_from_github(
         0048-backport-23039.patch
         0049-fix-twolame-pkgconfig.patch
         0050-fix-test-ld-absolute-lib-paths.patch
+
+        # Resolume patches
+        1000-resolume-small-memory-allocations.patch
+        1001-max_chunk_size-from-format-context-in-build_chunks.patch
+        1003-avformat_index_get_entry_const_correctness.patch
+        1004-h264-videotoolbox-arm64-bframe-size.patch
 )
 
 if(SOURCE_PATH MATCHES " ")
@@ -58,6 +64,8 @@ elseif(VCPKG_CMAKE_SYSTEM_NAME STREQUAL "QNX")
 endif()
 
 if(VCPKG_TARGET_IS_OSX)
+    # we want our libs with @rpath for development
+    string(APPEND OPTIONS " --install_name_dir=@rpath")
     list(JOIN VCPKG_OSX_ARCHITECTURES " " OSX_ARCHS)
     list(LENGTH VCPKG_OSX_ARCHITECTURES OSX_ARCH_COUNT)
 endif()
@@ -1083,3 +1091,6 @@ you may need to add the following link option for your library:
 endif()
 
 vcpkg_install_copyright(FILE_LIST "${SOURCE_PATH}/${LICENSE_FILE}")
+
+# Disable fixup of rpaths by vcpkg
+set(VCPKG_FIXUP_MACHO_RPATH OFF)
