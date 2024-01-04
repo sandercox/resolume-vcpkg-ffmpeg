@@ -1,7 +1,7 @@
 {
   "name": "ffmpeg",
   "version": "8.1.1",
-  "port-version": 2,
+  "port-version": 102,
   "description": [
     "A library to decode, encode, transcode, mux, demux, stream, filter and play pretty much anything that humans and machines have created.",
     "FFmpeg is the leading multimedia framework, able to decode, encode, transcode, mux, demux, stream, filter and play pretty much anything that humans and machines have created. It supports the most obscure ancient formats up to the cutting edge. No matter if they were designed by some standards committee, the community or a corporation. It is also highly portable: FFmpeg compiles, runs, and passes our testing infrastructure FATE across Linux, Mac OS X, Microsoft Windows, the BSDs, Solaris, etc. under a wide variety of build environments, machine architectures, and configurations."
@@ -37,9 +37,7 @@
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "sdl2"
-          ]
+          "features": ["sdl2"]
         },
         {
           "name": "ffmpeg",
@@ -76,137 +74,103 @@
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "alsa"
-          ],
+          "features": ["alsa"],
           "platform": "linux"
         },
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "ass"
-          ],
+          "features": ["ass"],
           "platform": "!uwp"
         },
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "fontconfig"
-          ],
+          "features": ["fontconfig"],
           "platform": "!uwp"
         },
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "fribidi"
-          ],
+          "features": ["fribidi"],
           "platform": "!uwp"
         },
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "modplug"
-          ],
+          "features": ["modplug"],
           "platform": "!uwp"
         },
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "openh264"
-          ],
+          "features": ["openh264"],
           "platform": "!uwp"
         },
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "srt"
-          ],
+          "features": ["srt"],
           "platform": "!uwp"
         },
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "ilbc"
-          ],
+          "features": ["ilbc"],
           "platform": "!(arm & uwp)"
         },
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "ssh"
-          ],
+          "features": ["ssh"],
           "platform": "!(uwp | arm)"
         },
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "amf"
-          ],
+          "features": ["amf"],
           "platform": "!osx & !uwp"
         },
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "opencl"
-          ],
+          "features": ["opencl"],
           "platform": "!uwp & !osx"
         },
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "opengl"
-          ],
+          "features": ["opengl"],
           "platform": "!uwp & !(arm64 & windows)"
         },
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "tensorflow"
-          ],
+          "features": ["tensorflow"],
           "platform": "x64 & !static & !uwp & !windows"
         },
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "dav1d"
-          ],
+          "features": ["dav1d"],
           "platform": "!(uwp | (windows & x86 & !static))"
         },
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "tesseract"
-          ],
+          "features": ["tesseract"],
           "platform": "!(windows & arm) & !static & !uwp"
         },
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "qsv"
-          ],
+          "features": ["qsv"],
           "platform": "(x64 | x86) & (windows | linux) & !uwp"
         },
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "nvcodec"
-          ],
+          "features": ["nvcodec"],
           "platform": "linux | (!osx & !uwp & !(arm64 & windows))"
         }
       ]
@@ -217,33 +181,24 @@
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "all",
-            "gpl"
-          ]
+          "features": ["all", "gpl"]
         },
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "x264"
-          ],
+          "features": ["x264"],
           "platform": "!(arm & windows)"
         },
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "x265"
-          ],
+          "features": ["x265"],
           "platform": "!uwp & !(arm & windows)"
         },
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "avisynthplus"
-          ],
+          "features": ["avisynthplus"],
           "platform": "windows & !arm & !uwp & !static"
         }
       ]
@@ -254,38 +209,25 @@
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "all-gpl",
-            "fdk-aac",
-            "nonfree",
-            "openssl"
-          ]
+          "features": ["all-gpl", "fdk-aac", "nonfree", "openssl"]
         }
       ]
     },
     "alsa": {
       "description": "Enable ALSA support",
-      "dependencies": [
-        "alsa"
-      ]
+      "dependencies": ["alsa"]
     },
     "amf": {
       "description": "AMD AMF codec support",
-      "dependencies": [
-        "amd-amf"
-      ]
+      "dependencies": ["amd-amf"]
     },
     "aom": {
       "description": "AV1 video encoding/decoding via libaom support in ffmpeg",
-      "dependencies": [
-        "aom"
-      ]
+      "dependencies": ["aom"]
     },
     "ass": {
       "description": "Libass subtitles rendering, needed for subtitles and ass filter support in ffmpeg",
-      "dependencies": [
-        "libass"
-      ]
+      "dependencies": ["libass"]
     },
     "avcodec": {
       "description": "Build the avcodec library"
@@ -296,10 +238,7 @@
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "avcodec",
-            "avformat"
-          ]
+          "features": ["avcodec", "avformat"]
         }
       ]
     },
@@ -312,9 +251,7 @@
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "avcodec"
-          ]
+          "features": ["avcodec"]
         }
       ]
     },
@@ -326,9 +263,7 @@
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "gpl"
-          ]
+          "features": ["gpl"]
         }
       ]
     },
@@ -337,15 +272,11 @@
     },
     "bzip2": {
       "description": "Bzip2 support",
-      "dependencies": [
-        "bzip2"
-      ]
+      "dependencies": ["bzip2"]
     },
     "dav1d": {
       "description": "AV1 decoding via libdav1d",
-      "dependencies": [
-        "dav1d"
-      ]
+      "dependencies": ["dav1d"]
     },
     "drawtext": {
       "description": "Enable the drawtext filter",
@@ -353,9 +284,7 @@
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "freetype"
-          ]
+          "features": ["freetype"]
         },
         "harfbuzz"
       ]
@@ -366,9 +295,7 @@
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "gpl"
-          ]
+          "features": ["gpl"]
         },
         "libdvdnav",
         "libdvdread"
@@ -380,16 +307,12 @@
         {
           "name": "fdk-aac",
           "default-features": false,
-          "features": [
-            "he-aac"
-          ]
+          "features": ["he-aac"]
         },
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "nonfree"
-          ]
+          "features": ["nonfree"]
         }
       ]
     },
@@ -400,11 +323,7 @@
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "avcodec",
-            "avfilter",
-            "avformat"
-          ]
+          "features": ["avcodec", "avfilter", "avformat"]
         }
       ]
     },
@@ -433,63 +352,44 @@
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "avcodec",
-            "avformat"
-          ]
+          "features": ["avcodec", "avformat"]
         }
       ]
     },
     "fontconfig": {
       "description": "Useful for drawtext filter",
-      "dependencies": [
-        "fontconfig"
-      ]
+      "dependencies": ["fontconfig"]
     },
     "freetype": {
       "description": "Needed for drawtext filter",
-      "dependencies": [
-        "freetype"
-      ]
+      "dependencies": ["freetype"]
     },
     "fribidi": {
       "description": "Improves drawtext filter",
-      "dependencies": [
-        "fribidi"
-      ]
+      "dependencies": ["fribidi"]
     },
     "gpl": {
       "description": "Allow use of GPL code, the resulting libs and binaries will be under GPL"
     },
     "iconv": {
       "description": "Iconv support",
-      "dependencies": [
-        "libiconv"
-      ]
+      "dependencies": ["libiconv"]
     },
     "ilbc": {
       "description": "iLBC de/encoding via libilbc",
-      "dependencies": [
-        "libilbc"
-      ]
+      "dependencies": ["libilbc"]
     },
     "lzma": {
       "description": "lzma support",
-      "dependencies": [
-        "liblzma"
-      ]
+      "dependencies": ["liblzma"]
     },
     "modplug": {
       "description": "ModPlug via libmodplug",
-      "dependencies": [
-        "libmodplug"
-      ]
+      "dependencies": ["libmodplug"]
     },
     "mp3lame": {
       "description": "MP3 encoding via libmp3lame",
-      "dependencies": [
-        "mp3lame"
-      ]
+      "dependencies": ["mp3lame"]
     },
     "nonfree": {
       "description": "Allow use of nonfree code, the resulting libs and binaries will be unredistributable"
@@ -497,42 +397,29 @@
     "nvcodec": {
       "description": "Nvidia video decoding/encoding acceleration",
       "supports": "linux | (!osx & !uwp & !(arm64 & windows))",
-      "dependencies": [
-        "ffnvcodec"
-      ]
+      "dependencies": ["ffnvcodec"]
     },
     "opencl": {
       "description": "OpenCL processing",
       "supports": "!uwp",
-      "dependencies": [
-        "opencl"
-      ]
+      "dependencies": ["opencl"]
     },
     "opengl": {
       "description": "OpenGL rendering",
       "supports": "!uwp",
-      "dependencies": [
-        "opengl",
-        "opengl-registry"
-      ]
+      "dependencies": ["opengl", "opengl-registry"]
     },
     "openh264": {
       "description": "H.264 de/encoding via openh264",
-      "dependencies": [
-        "openh264"
-      ]
+      "dependencies": ["openh264"]
     },
     "openjpeg": {
       "description": "JPEG 2000 de/encoding via OpenJPEG",
-      "dependencies": [
-        "openjpeg"
-      ]
+      "dependencies": ["openjpeg"]
     },
     "openmpt": {
       "description": "Decoding tracked files via libopenmpt",
-      "dependencies": [
-        "libopenmpt"
-      ]
+      "dependencies": ["libopenmpt"]
     },
     "openssl": {
       "description": "Use OpenSSL for TLS support",
@@ -540,24 +427,18 @@
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "version3"
-          ]
+          "features": ["version3"]
         },
         "openssl"
       ]
     },
     "opus": {
       "description": "Opus de/encoding via libopus",
-      "dependencies": [
-        "opus"
-      ]
+      "dependencies": ["opus"]
     },
     "qsv": {
       "description": "Intel QSV Codec via oneVPL",
-      "dependencies": [
-        "libvpl"
-      ]
+      "dependencies": ["libvpl"]
     },
     "rubberband": {
       "description": "Enable rubberband support",
@@ -565,9 +446,7 @@
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "gpl"
-          ]
+          "features": ["gpl"]
         },
         "rubberband"
       ]
@@ -578,9 +457,7 @@
         {
           "name": "sdl2",
           "default-features": false,
-          "features": [
-            "x11"
-          ],
+          "features": ["x11"],
           "platform": "linux"
         },
         {
@@ -591,9 +468,7 @@
     },
     "snappy": {
       "description": "Snappy compression, needed for hap encoding",
-      "dependencies": [
-        "snappy"
-      ]
+      "dependencies": ["snappy"]
     },
     "soxr": {
       "description": "Include libsoxr resampling",
@@ -601,31 +476,23 @@
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "swresample"
-          ]
+          "features": ["swresample"]
         },
         "soxr"
       ]
     },
     "speex": {
       "description": "Speex de/encoding via libspeex",
-      "dependencies": [
-        "speex"
-      ]
+      "dependencies": ["speex"]
     },
     "srt": {
       "description": "Haivision SRT protocol",
       "supports": "!uwp",
-      "dependencies": [
-        "libsrt"
-      ]
+      "dependencies": ["libsrt"]
     },
     "ssh": {
       "description": "SFTP protocol via libssh",
-      "dependencies": [
-        "libssh"
-      ]
+      "dependencies": ["libssh"]
     },
     "swresample": {
       "description": "Build the swresample library"
@@ -636,28 +503,20 @@
     "tensorflow": {
       "description": "TensorFlow as a DNN module backend for DNN based filters like sr",
       "supports": "!static",
-      "dependencies": [
-        "tensorflow"
-      ]
+      "dependencies": ["tensorflow"]
     },
     "tesseract": {
       "description": "Tesseract, needed for ocr filter",
       "supports": "!static",
-      "dependencies": [
-        "tesseract"
-      ]
+      "dependencies": ["tesseract"]
     },
     "theora": {
       "description": "Theora encoding via libtheora",
-      "dependencies": [
-        "libtheora"
-      ]
+      "dependencies": ["libtheora"]
     },
     "twolame": {
       "description": "MP2 encoding via libtwolame",
-      "dependencies": [
-        "libtwolame"
-      ]
+      "dependencies": ["libtwolame"]
     },
     "vaapi": {
       "description": "VAAPI video decoding/encoding acceleration",
@@ -675,9 +534,7 @@
     },
     "vorbis": {
       "description": "Vorbis en/decoding via libvorbis, native implementation exists",
-      "dependencies": [
-        "libvorbis"
-      ]
+      "dependencies": ["libvorbis"]
     },
     "vpx": {
       "description": "VP8 and VP9 de/encoding via libvpx",
@@ -685,24 +542,18 @@
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "avcodec"
-          ]
+          "features": ["avcodec"]
         },
         "libvpx"
       ]
     },
     "vulkan": {
       "description": "H.264, HEVC and AV1 de/encoding via Vulkan",
-      "dependencies": [
-        "vulkan-headers"
-      ]
+      "dependencies": ["vulkan-headers"]
     },
     "webp": {
       "description": "WebP encoding via libwebp",
-      "dependencies": [
-        "libwebp"
-      ]
+      "dependencies": ["libwebp"]
     },
     "x264": {
       "description": "H.264 encoding via x264",
@@ -710,9 +561,7 @@
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "gpl"
-          ]
+          "features": ["gpl"]
         },
         "x264"
       ]
@@ -723,30 +572,22 @@
         {
           "name": "ffmpeg",
           "default-features": false,
-          "features": [
-            "gpl"
-          ]
+          "features": ["gpl"]
         },
         "x265"
       ]
     },
     "xml2": {
       "description": "XML parsing using the C library libxml2, needed for dash demuxing support",
-      "dependencies": [
-        "libxml2"
-      ]
+      "dependencies": ["libxml2"]
     },
     "zlib": {
       "description": "zlib support",
-      "dependencies": [
-        "zlib"
-      ]
+      "dependencies": ["zlib"]
     },
     "zmq": {
       "description": "Enable ZeroMQ support",
-      "dependencies": [
-        "zeromq"
-      ]
+      "dependencies": ["zeromq"]
     }
   }
 }
