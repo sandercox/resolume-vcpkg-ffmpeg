@@ -1,4 +1,21 @@
-# Upgrade vcpkg and FFmpeg
+# VCPKG repository for modified FFmpeg port
+
+This repository contains the vcpkg port for FFmpeg, which is modified to include additional features required by Resolume.
+
+### Versions
+
+`master` branch contains the latest version that might still be in internal development
+
+date tags rever to the version from vcpkg that was pulled and modified, version number tags report the first version of Resolume to include this version of FFmpeg. 
+This does not update with every release of the Resolume software.
+
+### Superseeded repositories
+
+This superseeds the vcpkg-public-registry repository, which was used to host the FFmpeg port before we changed our maintence mode. That repo was in use up until Resolume 7.20.x.
+
+# Notes on how this repo is upgraded by team Resolume
+
+## Upgrade vcpkg and FFmpeg
 
 As we use a custom modified version of FFmpeg, we need to upgrade this port manually. We still like to use the updates from upstream vcpkg so we need to extract those changes and apply our changes on top of that.
 
